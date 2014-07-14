@@ -1,4 +1,4 @@
 var wordOrder = function(text) {
-  return text.split(" ");
+  return text.split(/[\s,.!?]+/);
 
 };
