@@ -3,11 +3,11 @@ describe("wordOrder", function() {
     wordOrder("hello world").should.eql(['hello', 'world']);
   });
   it("Returns each word as an array of strings, with punctuation removed", function() {
-    wordOrder("hello, world").should.eql(['hello', 'world']);
+    wordOrder("hello, world!").should.eql(['hello', 'world']);
   });
- /* it("Returns each word as an array of strings, converting all to lower-case", function() {
-    wordOrder("Hello, World!")
-  }); */
+  it("Returns each word as an array of strings, converting all to lower-case", function() {
+    wordOrder("Hello, World!").should.eql(['hello', 'world']);
+  }); 
 });
 
 
