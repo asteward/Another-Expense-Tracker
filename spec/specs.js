@@ -1,22 +1,6 @@
-describe("wordOrder", function() {
-  it("Returns each word in a block of text as an array of strings", function() {
-    wordOrder("hello world").should.eql(['hello', 'world']);
+
+describe("countWord", function() {
+  it("Returns the number of times a word appears in text", function() {
+    countWord('hello world hello hello hello', 'hello').should.equal(4);
   });
-  it("Returns each word as an array of strings, with punctuation removed", function() {
-    wordOrder("hello, world!").should.eql(['hello', 'world']);
-  });
-  it("Returns each word as an array of strings, converting all to lower-case", function() {
-    wordOrder("Hello, World!").should.eql(['hello', 'world']);
-  }); 
-});
-
-
-
-
-
-
-
-
-
-
-
+})
