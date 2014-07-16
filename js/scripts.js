@@ -17,6 +17,29 @@ var Purchase = {
 };
 
 $(document).ready(function() {
+  var purchaseList = [];
 
+  $('#add-purchase-form').submit(function(event) {
+    event.preventDefault();
+
+    var newPurchase = Object.create(Purchase);
+    newPurchase.setPrice($("#price").val());
+    newPurchase.setDescription($("#description").val());
+
+    purchaseList.push(newPurchase);
+
+    $("#price").val("");
+    $("#description").val("");
+
+    $("tbody#add-table").empty();
+
+    purchaseList.forEach(function(purchase) {
+      $("tbody#add-table").append("<tr><td>" + purchase.getDescription() + "</td>" +
+                                  "<td>" + purchase.getPrice() + "</td></tr>");
+    });
+
+    $("#description").focus();
+
+  });
 });
 

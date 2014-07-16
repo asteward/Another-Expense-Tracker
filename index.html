@@ -17,10 +17,38 @@
 
       <h1>Expense Tracker</h1>
       <p class="lead">Track your expenses with ease</p>
-
       <div class="row">
+        <div id="categories" class="col-md-4">
 
+        </div><!-- 1st column -->
+        <div class="col-md-4">
+          <div id="add-purchaseColumn">
+            <form id="add-purchase-form">
+              <h3>Add Purchase:</h3>
+              <div class="form-group">
+                <label for="description"></label>
+                <input id="description" class="form-control" placeholder="Description" type="text">
+                <label for="price"></label>
+                <input id="price" class="form-control" placeholder="Price" type="number">
+              </div><!-- form-group -->
+              <button class="btn btn-primary" type="submit">Add Purchase</button>
+            </form>
+            </div><!-- add purchase form -->
+          </div><!-- #add-purchase -->
+          <div class="col-md-4" id="purchasesColumn">
+            <table class="table">
+              <thead>
+                <th>Description</th>
+                <th>Price</th>
+              </thead>
+              <tbody id="add-table">
 
+              </tbody>
+            </table>
+<!--             <table class="table" id="add-table">
+            </table> -->
+          </div><!-- #purchasesColumn -->
+        </div><!-- 1st column -->
 
 
       </div> <!-- .row -->
