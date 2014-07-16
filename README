@@ -1,10 +1,8 @@
-wordOrder
-7/14/2014 
-Justin Speers / speersjustin@fastmail.fm
+expense-tracker
 
+Austin Steward & Justin Speers
+7/16/2014
 
+Tracks purchases given a description and price, with the ability to organize 
+all purchased by category (food, entertainment, etc).
 
-This function accepts text in string format (word, phrases) and returns an array with each word sorted by A) number of 
-occurences in the text (then) B) order of appearance.
-
- 
