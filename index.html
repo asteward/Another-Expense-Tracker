@@ -14,9 +14,11 @@
   <body>
 
     <div class="container" id="backgroundColor">
+      <div class="jumbotron">
+        <h1>Expense Tracker</h1>
+        <p class="lead">Track your expenses with ease</p>
+      </div><!-- Jumbotron -->
 
-      <h1>Expense Tracker</h1>
-      <p class="lead">Track your expenses with ease</p>
       <div class="row">
         <div id="categories" class="col-md-4">
           <form id="add-category">
@@ -40,7 +42,7 @@
                   <label for="description"></label>
                   <input id="description" class="form-control" placeholder="Description" type="text">
                   <label for="price"></label>
-                  <input id="price" class="form-control" placeholder="Price" type="number">
+                  <input id="price" step="any" min="0" class="form-control" placeholder="Price" type="number">
                 </div><!-- form-group -->
                 <button class="btn btn-primary" type="submit">Add Purchase</button>
               </form>
@@ -63,6 +65,10 @@
 
 
       </div> <!-- .row -->
+      <div id="secret">
+          <img id="plane" src="css/hammer2.gif">
+
+      </div>
     </div> <!-- .container -->
 
   </body>

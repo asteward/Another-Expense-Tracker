@@ -2,9 +2,9 @@ html {
   height: 100%;
 }
 body {
-  background: linear-gradient(lightgrey, grey);
+  background: linear-gradient(#EDEDED, #C7C7C7);
   height: 100%;
-
+  overflow: hidden;
 }
 .container {
   background:white;
@@ -34,5 +34,23 @@ body {
 }
 
 #latter-columns {
+  display: none;
+}
+
+.jumbotron {
+  background-repeat: no-repeat;
+  background-image: url(hammer1.jpg);
+  background-position: top right;
+
+}
+
+#plane {
+  position: absolute;
+  left: -1000px;
+}
+.moneh {
+  text-align: right;
+}
+#secret {
   display: none;
 }
