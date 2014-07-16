@@ -19,8 +19,19 @@
       <p class="lead">Track your expenses with ease</p>
       <div class="row">
         <div id="categories" class="col-md-4">
+          <form id="add-category">
+            <h3>Categories:</h3>
+            <div class="form-group">
+              <label for="category"></label>
+              <input id="category" class="form-control" placeholder="New category" type="text">
+            </div><!-- form-group -->
+            <button class="btn btn-success" type="submit">Add</button>
+          </form>
+          <ul id="cat-list">
 
+          </ul>
         </div><!-- 1st column -->
+
         <div class="col-md-4">
           <div id="add-purchaseColumn">
             <form id="add-purchase-form">

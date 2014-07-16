@@ -40,6 +40,27 @@ var Category = {
 
 $(document).ready(function() {
   var purchaseList = [];
+  var categoryList = [];
+  $("form#add-category").submit(function(event) {
+    event.preventDefault();
+    var newCategory = $("input#category").val();
+
+    var category = Object.create(Category);
+    category.setDescription($("input#category").val());
+    categoryList.push(category);
+
+    $("ul#cat-list").empty();
+    categoryList.forEach(function(thisCategory) {
+      $("ul#cat-list").append("<li>" + thisCategory.getDescription() + "</li>");
+    });
+
+    $("input#category").val("");
+    $("input#category").focus();
+//    $("ul#cat-list").append("<li>" + category. + "</li>");
+
+
+
+  });
 
   $('#add-purchase-form').submit(function(event) {
     event.preventDefault();
