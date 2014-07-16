@@ -17,17 +17,15 @@ var countWord = function(text, word) {
   return count;
 };
 
+
+
 var wordOrder = function(text) {
-  
+  var wordList = [];
 
   text = text.toLowerCase();
+  wordList = text.split(/\W/);
 
-  // split was returning empty elements, filter those out.
- // var words = text.split(/\W/).filter(function(element) { return element.length !== 0;});
- // var sortedWords = words.slice();
-  //sortedWords.sort();
-
-
-
-  return [[]];
+  wordList.sort();
+  
+  return wordList;
 };

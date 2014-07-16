@@ -4,3 +4,9 @@ describe("countWord", function() {
     countWord('hello world hello hello hello', 'hello').should.equal(4);
   });
 })
+
+describe("wordOrder", function() {
+  it("Returns an array of words in text sorted alphabetically", function() {
+    wordOrder("world hello").should.eql(['hello', 'world']);
+  });
+});
