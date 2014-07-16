@@ -20,12 +20,37 @@ var countWord = function(text, word) {
 
 
 var wordOrder = function(text) {
-  var wordList = [];
 
   text = text.toLowerCase();
-  wordList = text.split(/\W/);
+  var wordList = text.split(/\W/);
 
-  wordList.sort();
+  // index in one corresponds to index of the other
+  var wordCountList = [];   // integers indicating # of times a word occurs
+  var uniqueWordList = []; // unique words
+
+  var sortedWords = [];
+
+  wordList.forEach(function(word) {
+    if (uniqueWordList.indexOf(word) === -1) {
+      uniqueWordList.push(word);
+      wordCountList.push(countWord(text, word));
+    }
+  });
   
-  return wordList;
+  // left off here really
+  // uniqueWordList[] contains each unique word
+  // wordCountList[] contains the # of times those words exist
+
+  // var maxCount = 0;
+
+  // for(var index = 0; index < uniqueWordList.length; index++) {
+  //   maxCount = wordCountList[index];
+
+  //   for(var index2 = index; index2 < uniqueWordList.length; index++) {
+  //     if 
+  //   }
+  // }
+  
+  sortedWords = uniqueWordList.slice(); // temporary, to return unique word list
+  return sortedWords;
 };

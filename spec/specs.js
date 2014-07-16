@@ -6,7 +6,10 @@ describe("countWord", function() {
 })
 
 describe("wordOrder", function() {
-  it("Returns an array of words in text sorted alphabetically", function() {
-    wordOrder("world hello").should.eql(['hello', 'world']);
+  it("Returns an array of words in order of appearance", function() {
+    wordOrder("hello world").should.eql(['hello', 'world']);
+  });
+  it("Returns an array of of words sorted in order of appearance, with no duplicates", function() {
+    wordOrder('hello world hello world').should.eql(['hello', 'world']);;
   });
 });
