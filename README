@@ -1,6 +1,10 @@
-Word Order
+wordOrder
 7/14/2014 
 Justin Speers / speersjustin@fastmail.fm
 
 
-This web page accepts a block of text from the user and returns a list of all unique words ordered by number of appearances. 
+
+This function accepts text in string format (word, phrases) and returns an array with each word sorted by A) number of 
+occurences in the text (then) B) order of appearance.
+
+ 
