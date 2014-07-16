@@ -13,3 +13,22 @@ describe("Purchase.getDescription", function() {
     purchase.getDescription().should.equal("pizza");
   });
 });
+describe("Category.getPurchaseList", function() {
+  it("Returns an array with all of the items for purchase in a category", function() {
+    var addPurchase1 = Object.create(Purchase);
+    var addPurchase2 = Object.create(Purchase);
+
+    addPurchase1.setDescription("pizza");
+    addPurchase1.setPrice(20);
+    addPurchase2.setDescription("burger");
+    addPurchase2.setPrice(10);
+
+    var food = Object.create(Category);
+
+    food.setDescription("Food");
+    food.addPurchase(addPurchase1);
+    food.addPurchase(addPurchase2);
+
+    food.getPurchaseList().should.eql([addPurchase1, addPurchase2]);
+  });
+});

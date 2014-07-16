@@ -16,6 +16,28 @@ var Purchase = {
   }
 };
 
+var Category = {
+  description: '',
+  purchaseList: [],
+
+  setDescription: function(desc) {
+    this.description = desc;
+  },
+  getDescription: function() {
+    return this.description;
+  },
+  addPurchase: function(purchaseObj) {
+    this.purchaseList.push(purchaseObj);
+  },
+  getPurchaseList: function() {
+
+    // what is the difference if any between these two approaches?
+    //return this.purchaseList.slice(0);
+    return this.purchaseList;
+  }
+
+};
+
 $(document).ready(function() {
   var purchaseList = [];
 
