@@ -13,7 +13,7 @@
 
   <body>
 
-    <div class="container">
+    <div class="container" id="backgroundColor">
 
       <h1>Expense Tracker</h1>
       <p class="lead">Track your expenses with ease</p>
@@ -31,35 +31,35 @@
 
           </ul>
         </div><!-- 1st column -->
+        <div id="latter-columns">
+          <div class="col-md-4">
+            <div id="add-purchaseColumn">
+              <h3>Add Purchase for <span id="purchase-category"></span>:</h3>
+              <form id="add-purchase-form">
+                <div class="form-group">
+                  <label for="description"></label>
+                  <input id="description" class="form-control" placeholder="Description" type="text">
+                  <label for="price"></label>
+                  <input id="price" class="form-control" placeholder="Price" type="number">
+                </div><!-- form-group -->
+                <button class="btn btn-primary" type="submit">Add Purchase</button>
+              </form>
+              </div><!-- add purchase form -->
+            </div><!-- #add-purchase -->
+            <div class="col-md-4" id="purchasesColumn">
+              <table class="table">
+                <thead>
+                  <th>Description</th>
+                  <th>Price</th>
+                </thead>
+                <tbody id="add-table">
 
-        <div class="col-md-4">
-          <div id="add-purchaseColumn">
-            <form id="add-purchase-form">
-              <h3>Add Purchase:</h3>
-              <div class="form-group">
-                <label for="description"></label>
-                <input id="description" class="form-control" placeholder="Description" type="text">
-                <label for="price"></label>
-                <input id="price" class="form-control" placeholder="Price" type="number">
-              </div><!-- form-group -->
-              <button class="btn btn-primary" type="submit">Add Purchase</button>
-            </form>
-            </div><!-- add purchase form -->
-          </div><!-- #add-purchase -->
-          <div class="col-md-4" id="purchasesColumn">
-            <table class="table">
-              <thead>
-                <th>Description</th>
-                <th>Price</th>
-              </thead>
-              <tbody id="add-table">
-
-              </tbody>
-            </table>
-<!--             <table class="table" id="add-table">
-            </table> -->
-          </div><!-- #purchasesColumn -->
-        </div><!-- 1st column -->
+                </tbody>
+              </table>
+  <!--             <table class="table" id="add-table">
+              </table> -->
+            </div><!-- #purchasesColumn -->
+        </div><!-- latter-column -->
 
 
       </div> <!-- .row -->

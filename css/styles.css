@@ -1,0 +1,38 @@
+html {
+  height: 100%;
+}
+body {
+  background: linear-gradient(lightgrey, grey);
+  height: 100%;
+
+}
+.container {
+  background:white;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position:relative;
+    overflow:auto;
+    width:1080px;
+    margin-left:auto;
+    margin-right:auto;
+    min-height: 100%;
+}
+#backgroundColor {
+  height:100%;
+  overflow:auto;
+  background: white center top repeat-y;
+}
+
+#cat-list li {
+  color: #0033cc;
+}
+
+#cat-list li:hover {
+  color: #ff0000;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#latter-columns {
+  display: none;
+}

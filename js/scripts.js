@@ -17,9 +17,10 @@ var Purchase = {
 };
 
 var Category = {
-  description: '',
-  purchaseList: [],
-
+  initialize: function(description) {
+    this.purchaseList = [];
+    this.description = description;
+  },
   setDescription: function(desc) {
     this.description = desc;
   },
@@ -30,37 +31,45 @@ var Category = {
     this.purchaseList.push(purchaseObj);
   },
   getPurchaseList: function() {
-
-    // what is the difference if any between these two approaches?
-    //return this.purchaseList.slice(0);
-    return this.purchaseList;
-  }
-
+    return this.purchaseList.slice(0);
+  },
 };
 
+
+
 $(document).ready(function() {
-  var purchaseList = [];
   var categoryList = [];
+  var activeCategory = null;
+
   $("form#add-category").submit(function(event) {
     event.preventDefault();
-    var newCategory = $("input#category").val();
 
-    var category = Object.create(Category);
-    category.setDescription($("input#category").val());
-    categoryList.push(category);
+    var newCategory = Object.create(Category);
+    newCategory.initialize($("input#category").val());
+    categoryList.push(newCategory);
 
     $("ul#cat-list").empty();
     categoryList.forEach(function(thisCategory) {
       $("ul#cat-list").append("<li>" + thisCategory.getDescription() + "</li>");
+
+      $("ul#cat-list li").last().click(function() {
+        activeCategory = thisCategory;
+
+        $("#purchase-category").text(activeCategory.getDescription());
+        $("#latter-columns").show();
+        $("tbody#add-table").empty();
+        activeCategory.getPurchaseList().forEach(function(purchase) {
+         $("tbody#add-table").append("<tr><td>" + purchase.getDescription() + "</td>" +
+                                  "<td>" + purchase.getPrice() + "</td></tr>");
+        });
+        $("#description").focus();
+      });
     });
 
     $("input#category").val("");
     $("input#category").focus();
-//    $("ul#cat-list").append("<li>" + category. + "</li>");
-
-
-
   });
+
 
   $('#add-purchase-form').submit(function(event) {
     event.preventDefault();
@@ -69,15 +78,15 @@ $(document).ready(function() {
     newPurchase.setPrice($("#price").val());
     newPurchase.setDescription($("#description").val());
 
-    purchaseList.push(newPurchase);
+    activeCategory.addPurchase(newPurchase);
 
     $("#price").val("");
     $("#description").val("");
 
     $("tbody#add-table").empty();
 
-    purchaseList.forEach(function(purchase) {
-      $("tbody#add-table").append("<tr><td>" + purchase.getDescription() + "</td>" +
+    activeCategory.getPurchaseList().forEach(function(purchase) {
+        $("tbody#add-table").append("<tr><td>" + purchase.getDescription() + "</td>" +
                                   "<td>" + purchase.getPrice() + "</td></tr>");
     });
 
